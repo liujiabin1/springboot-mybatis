@@ -12,4 +12,6 @@ public interface UserMapper {
     List<User> findAllLazy();
 
     List<User> findAllByDepartmentId(int departmentId);
+
+    int cleanCache();
 }

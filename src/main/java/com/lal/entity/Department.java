@@ -2,10 +2,13 @@ package com.lal.entity;
 
 import lombok.Data;
 
-import java.util.Set;
+import java.io.Serializable;
 
 @Data
-public class Department {
+public class Department implements Serializable {
+
+
+    private static final long serialVersionUID = 1295937018823493031L;
 
     private String id;
 
@@ -13,5 +16,4 @@ public class Department {
 
     private String tel;
 
-    private Set<User> users;
 }
