@@ -1,12 +1,15 @@
 package com.lal.mapper;
 
 import com.lal.entity.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Mapper
-@Repository
+import java.util.List;
+
+
 public interface UserMapper {
 
-    User findUserById(int id);
+    List<User> findAll();
+
+    List<User> findAllLazy();
+
+    List<User> findAllByDepartmentId(int departmentId);
 }

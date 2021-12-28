@@ -2,21 +2,18 @@ package com.lal.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class User {
 
-    /**
-     * 用户名
-     */
-    private String userName;
+    private String id;
 
-    /**
-     * 密码
-     */
-    private String password;
+    private String name;
 
-    /**
-     * 真正的名字
-     */
-    private String realName;
+    private Integer age;
+
+    private Date birthday;
+
+    private Department department;
 }

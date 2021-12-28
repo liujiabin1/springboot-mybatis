@@ -4,6 +4,9 @@ import com.lal.entity.User;
 import com.lal.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -12,13 +15,14 @@ public class UserService {
     private UserMapper userMapper;
 
     public String findUser() {
-        User user = userMapper.findUserById(1);
+        List<User> users = userMapper.findAll();
 
-        if (user == null) {
+        if (CollectionUtils.isEmpty(users)) {
             return "找不到用户";
         }
-        return "用户名：" + user.getUserName() + " " +
-                "用户密码：" + user.getPassword() + " " +
-                "用户真实名:" + user.getRealName();
+        User user = users.get(0);
+        return "用户名：" + user.getName() + " " +
+                "用户密码：" + user.getAge() + " " +
+                "用户真实名:" + user.getDepartment().getName();
     }
 }
